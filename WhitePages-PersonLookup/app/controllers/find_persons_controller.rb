@@ -1,4 +1,4 @@
-API_KEY = "6b5a968507f728b72bac005321001c28"
+API_KEY = ""
 require "api_response"
 require "parse_json_response"
 
@@ -16,7 +16,7 @@ class FindPersonsController < ApplicationController
   end
 
   def find_person(api_key,first_name,last_name,address)
-    response = ApiResponse.new(API_KEY,params['first_name'],params['last_name'],params['where'])
+    response = ApiResponse.new(api_key,first_name,last_name,address)
     response.get_api_response
   end
 end
